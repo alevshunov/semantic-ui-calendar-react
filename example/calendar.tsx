@@ -78,7 +78,7 @@ class DateTimeForm extends React.Component<any, any> {
 
     this.state = {
       year: '',
-      date: '',
+      date: '11-07-2020',
       dateStartYear: '',
       time: '',
       dateTime: '',
@@ -93,6 +93,24 @@ class DateTimeForm extends React.Component<any, any> {
 
     return (
       <Form>
+        <DateInput
+          placeholder='Date'
+          popupPosition='bottom right'
+          className='example-calendar-input'
+          name='date'
+          closable
+          clearIcon={(<Icon name='remove' color='red' />)}
+          clearable={clearable}
+          animation='scale'
+          duration={200}
+          hideMobileKeyboard
+          value={this.state.date}
+          iconPosition='left'
+          preserveViewMode={false}
+          autoComplete='off'
+          onChange={this.handleChange}
+          minDate={moment('2020-08-19')}
+        />
         <DateInput
           placeholder='Date'
           popupPosition='bottom right'

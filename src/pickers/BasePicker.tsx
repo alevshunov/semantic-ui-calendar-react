@@ -146,14 +146,15 @@ abstract class BasePicker<P extends BasePickerProps> extends React.Component<P, 
 
     switch (key) {
       case 'Enter':
-        this.handleEnterKeyPress(event);
+        // this.handleEnterKeyPress(event);
         break;
       case 'Esc':
       case 'Escape':
         this.props.closePopup();
         break;
       default:
-        this.handleArrowKeyPress(event);
+        this.props.closePopup();
+        // this.handleArrowKeyPress(event);
     }
   }
 
@@ -174,6 +175,7 @@ abstract class BasePicker<P extends BasePickerProps> extends React.Component<P, 
   }
 
   protected handleArrowKeyPress = (event: KeyboardEvent): void => {
+    return;
     if (!this.canCalendarCatchKeyboardEvents()) {
       return;
     }
